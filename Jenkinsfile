@@ -19,7 +19,7 @@ pipeline {
                   withCredentials([string(credentialsId: 'dockerhubpass', variable: 'dockepass')]) {
                   bat "docker login -u sakshi9912 -p ${dockepass}"
                     }
-                bat "docker push sakshi9912/test1"
+                bat "docker push sakshi9912/java"
                 }
                  echo 'Push to Docker Hub Completed'
             }
