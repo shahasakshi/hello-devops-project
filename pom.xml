@@ -24,4 +24,16 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Add the SonarQube Maven plugin -->
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.11.0.3922</version> <!-- Replace with the desired version -->
+      </plugin>
+      <!-- Other plugins as needed -->
+    </plugins>
+  </build>
 </project>
