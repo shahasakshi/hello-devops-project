@@ -13,6 +13,12 @@ pipeline {
                             bat 'mvn clean package'
                         }
                     }
+                       stage('docker-Build') {
+                                steps {
+                                    //bat 'dir && mvn clean package'
+                                    bat 'docker build -t sakshi9912/java .'
+                                }
+                            }
         stage('sonarqube-analysis'){
              steps{
                   script{
@@ -22,12 +28,7 @@ pipeline {
                   }
                }
              }
-        stage('docker-Build') {
-            steps {
-                //bat 'dir && mvn clean package'
-                bat 'docker build -t sakshi9912/java .'
-            }
-        }
+
         stage('login & Push to Docker Hub') {
                 steps {
                     script {
